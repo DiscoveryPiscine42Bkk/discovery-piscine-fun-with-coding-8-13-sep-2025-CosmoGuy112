@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <style>
+    body {
+      background: pink;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 48px;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+    .shops {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+
+    }
+    .shop {
+      text-align: center;
+    }
+    .shop img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      border: 3px solid white;
+    }
+    .shop a {
+      display: block;
+      margin-top: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #222;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background: #333;
+      margin: 30px;
+    }
+    footer {
+      margin-top: auto;
+      text-align: right;
+      padding: 10px 20px;
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shopping</h1>
+  </header>
+
+  <section class="shops">
+    <div class="shop">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.JCAoOTNhToDgwjLxpFSEigHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="lazada logo" />
+      <a href="https://www.lazada.com/">Lazada</a>
+    </div>
+    <div class="shop">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.5edjTY9kVB3x7sPPQqnoTgAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="shopee logo" />
+      <a href="https://www.shopee.co.th/">Shopee</a>
+    </div>
+  </section>
+
+  <hr />
+
+  <footer>
+    <p>© wil 2025</p>
+  </footer>
+</body>
+</html>
