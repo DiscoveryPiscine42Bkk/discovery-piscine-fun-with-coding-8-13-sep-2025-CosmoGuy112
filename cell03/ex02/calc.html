@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic Calculator (ex02)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      text-align: center;
+    }
+    .calc {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+    input[type="text"], select {
+      padding: 6px 8px;
+    }
+    input[type="submit"] {
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="calc" id="calc-form">
+      <input id="left" type="text" placeholder="left" />
+      <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input id="right" type="text" placeholder="right" />
+      <input type="submit" value="Try me!"/>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('calc-form');
+      const leftEl = document.getElementById('left');
+      const rightEl = document.getElementById('right');
+      const opEl = document.getElementById('op');
+      const intRegex = /^\d+$/;
+
+      function isValidIntStr(s) { return intRegex.test(s); }
+
+      function over9000() {
+        const msg = "It's over 9000!";
+        alert(msg);
+        console.log(msg);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const Ls = leftEl.value.trim();
+        const Rs = rightEl.value.trim();
+
+        if (!isValidIntStr(Ls) || !isValidIntStr(Rs)) {
+          alert('Error :(');
+          return;
+        }
+
+        const L = parseInt(Ls, 10);
+        const R = parseInt(Rs, 10);
+        const op = opEl.value;
+
+        if ((op === '/' || op === '%') && R === 0) {
+          over9000();
+          return;
+        }
+
+        let result;
+        switch (op) {
+          case '+': result = L + R; break;
+          case '-': result = L - R; break;
+          case '*': result = L * R; break;
+          case '/': result = L / R; break;
+          case '%': result = L % R; break;
+          default: alert('Error :('); return;
+        }
+
+        alert(String(result));
+        console.log(result);
+      });
+
+      setInterval(() => { alert('Please, use me...'); }, 30000);
+    })();
+  </script>
+</body>
+</html>
