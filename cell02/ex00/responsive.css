@@ -1,0 +1,36 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;       
+  width: 100vw;     
+  height: 100vh;     
+}
+
+td {   
+  text-align: center;    
+}
+
+.first  { background: #c5c97a; } 
+.second { background: #f6b9a9; } 
+
+
+@media (max-width: 700px) {
+  table, tbody, tr {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  tr { height: 100%; }
+  td {
+    display: block;
+    width: 100%;
+    height: 50vh; 
+    padding: 5vw;             
+  }
+}
